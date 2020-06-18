@@ -17,14 +17,14 @@ function return_val()
 
 if [ ! -f  "$MAKEFILE_DIRS" ]; then
     ./configure --prefix=$INSTALL_PATH;return_val
-fi
     make clean
+fi
     make;return_val
     sudo make install;return_val
     echo "--------- finished install pcre"
 
 ### manual copy
-### cp -pfr $INSTALL_PATH/include/libpcre* shasta/cfg/filesystem/usr/local/include
+### cp -pfr $INSTALL_PATH/include/pcre* shasta/cfg/filesystem/usr/local/include
 ### cp -pfr $INSTALL_PATH/lib/libpcre*  shasta/cfg/filesystem/usr/local/lib
 
 exit 0
